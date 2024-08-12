@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-brands/css/uicons-brands.css'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MENU.GOD</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="script.js">
+</head>
+<body>
+  <header>
+    <div class="container" id="home">
+      <div class="logo"><img src="img\th.jpeg" alt="Logo"></div>
+      <div class="menu">
+        <nav>
+          <a href="#home">home</a>
+          <a href="#habilidades">habilidades</a>
+          <a href="#projetos">projetos</a>
+          <a href="#contato">contato</a>
+        </nav>
+      </div>
+      <div class="social">
+        <a href="https://www.instagram.com/input._.h?igsh=NjFlMzV4bTBuZWc4"><button><i class="fi fi-brands-instagram"></i></button></a>
+        <a href="https://www.linkedin.com/in/kawa-karlyndo-alves-silva-70918a286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><button><i class="fi fi-brands-linkedin"></i></button></a>
+        <a href="https://github.com/Kawakarlyndo"><button><i class="fi fi-brands-github"></i></button></a>
+      </div>
+      <button class="menu-toggle">Menu</button>
+    </div>
+  </header>
+  <section class="home">
+    <div class="home-img">
+        <img src="./img/rimuro.jpg" alt="">
+    </div>
+    <div class="home-content">
+        <h1>hi, It's <span>kawã</span></h1>
+        <h3 class="typing-text">I'm a <span></span></h3>
+        <p>Olá, meu nome é kawã e estou no segundo ano do curso técnico em Informática no IFMA. Tenho uma grande paixão por tecnologia e, durante meu tempo aqui, tenho me dedicado a aprender cada vez mais sobre programação e desenvolvimento de sistemas.</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/kawa-karlyndo-alves-silva-70918a286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=andro"><i class="fi fi-brands-linkedin"></i></a>
+            <a href="https://github.com/Kawakarlyndo"><i class="fi fi-brands-github"></i></a>
+            <a href="https://www.instagram.com/input._.h?igsh=NjFlMzV4bTBuZWc4"><i class="fi fi-brands-instagram"></i></a>
+        </div>
+        <a href="#" class="btn">Hire me</a>
+    </div>
+</section>
+<section id="skills" class="skills">
+    <div class="skill">
+        <img src="./img/java.jpg" alt="Skill 1">
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress" style="width: 70%;"></div>
+                <span class="progress-value">70%</span>
+            </div>
+        </div>
+    </div>
+    <div class="skill">
+        <img src="./img/python.jpg" alt="Skill 2">
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress" style="width: 80%;"></div>
+                <span class="progress-value">80%</span>
+            </div>
+        </div>
+    </div>
+    <div class="skill" id="habilidades">
+        <img src="./img/c++.jpg" alt="Skill 3">
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress" style="width: 60%;"></div>
+                <span class="progress-value">60%</span>
+            </div>
+        </div>
+    </div>
+    <div class="containere">
+      <h1>Conhecimentos de Programação</h1>
+      <p id="text1">kawã sabe o básico de Java e consegue desenvolver pequenos aplicativos.</p>
+      <p id="text2">kawã tem conhecimento básico em Python, o que lhe permite criar scripts simples.</p>
+      <p id="text3">kawã aprendeu os conceitos básicos de C++ e consegue escrever programas básicos.</p>
+    </div>
+</section>
+<div class="projetostitlo">
+  <h1>
+    projetos
+  </h1>
+</div>
+<section class="projetos" id="projetos">
+    <div class="projeto">
+      <h1>sistema solar</h1>
+      <a href="https://kawakarlyndo.github.io/Meu.portifolio.kawa/novoplanet.html" target="_blank">
+        <img src="./img/solar.jpg" alt="Imagem 1">
+      </a>
+    </div>
+    <div class="projeto">
+      <h1>galeria</h1>
+      <a href="https://kawakarlyndo.github.io/Meu.portifolio.kawa/videos.html" target="_blank">
+        <img src="./img/galeri.jpg" alt="Imagem 2">
+      </a>
+    </div>
+</section>
+<section class="Contact" id="contato">
+    <img src="../img/gg.jpg" alt="Image Description">
+    <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number">
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Your message"></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+    </form>
+  </section>
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.menu').classList.toggle('active');
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+      const progressBars = document.querySelectorAll(".progress-bar");
+
+      progressBars.forEach((bar) => {
+          const progress = bar.querySelector(".progress");
+          const valueText = bar.querySelector(".progress-value");
+          let width = parseFloat(progress.style.width);
+
+          // Reset width for animation
+          progress.style.width = "0%";
+          valueText.textContent = "0%";
+
+          // Animate to original width
+          setTimeout(() => {
+              progress.style.width = width + "%";
+              valueText.textContent = width + "%";
+          }, 100);
+
+          // Increase width by 0.1% on hover
+          bar.addEventListener("mouseover", () => {
+              if (width < 100) {
+                  width += 0;
+                  progress.style.width = width + "%";
+                  valueText.textContent = width.toFixed(1) + "%";
+              }
+         });
+      });
+  });
+
+  const texts = [
+            "kawã sabe o básico de Java e consegue desenvolver pequenos aplicativos.",
+            "kawã tem conhecimento básico em Python, o que lhe permite criar scripts simples.",
+            "kawã aprendeu os conceitos básicos de C++ e consegue escrever programas básicos."
+        ];
+
+        document.getElementById("text1").textContent = texts[0];
+        document.getElementById("text2").textContent = texts[1];
+        document.getElementById("text3").textContent = texts[2];
+  </script>
+</body>
+</html>
