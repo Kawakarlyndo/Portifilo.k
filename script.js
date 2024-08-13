@@ -30,7 +30,7 @@ document.querySelector('.menu-toggle').addEventListener('click', function() {
       });
   });
 
-  const texts = [
+const texts = [
             "kawã sabe o básico de Java e consegue desenvolver pequenos aplicativos.",
             "kawã tem conhecimento básico em Python, o que lhe permite criar scripts simples.",
             "kawã aprendeu os conceitos básicos de C++ e consegue escrever programas básicos."
