@@ -18,7 +18,7 @@ body {
     height: 100vh;
     overflow-x: hidden;
     background-color: #000000;
-    background-size: 120%;
+    background-size: 100%;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -36,10 +36,14 @@ body {
 }
 
 header {
+    display: flex;
+    justify-content: center; /* Alinha horizontalmente ao centro */
+    align-items: center;     /* Alinha verticalmente ao centro */
     background-color: rgba(0, 0, 0, 0.8);
     width: 100vw;
-    position: relative; /* ou absolute se você precisar de posicionamento absoluto */
+    position: relative;
     left: 0;
+    text-align: center;
     box-shadow: 0px 0px 15px 5px rgba(0, 0, 255, 0.5);
 }
 
@@ -132,10 +136,10 @@ header {
   background-color: transparent;
   border: 1px solid #1900ff;
   color: #0004ff;
-  padding: 5px 10px;
+  padding: 5px 30px 5px 30px;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 99;
+  z-index: 999;
 }
 
 
@@ -144,6 +148,21 @@ header {
     background-color: black;
     align-items: center;
     text-align: center;
+  }
+
+  .projetos .projeto h1 {
+    font-size: 30px;
+    text-align: center;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  .projetostitlo h1{
+    font-size: 50px;
+    align-items: center;
+    text-align: center;
+    color: blue;
+    text-transform: uppercase;
   }
 
   .home-content h1 {
@@ -210,18 +229,7 @@ header {
   .menu.active nav {
     flex-direction: column;
   }
-  .titulo{
-    font-size: 60px; 
-    text-align: center;
-  }
 }
-
-
-
-.titulo{
-    font-size: 100px; 
-}
-
 
 @media screen and (min-width: 1201px) {
   .titulo{
@@ -231,7 +239,6 @@ header {
     text-align: center;
   }
 }
-
 .textaling{
 background-color: #000000;
 width: 500px;
@@ -602,25 +609,44 @@ input::placeholder, textarea::placeholder {
   padding: 30px;
 }
 
-.containere{
+.skills .containere {
   justify-items: center;
   align-items: center;
+  text-align: center;
+  box-shadow: 0  0 5px rgb(31, 31, 41);
+  animation: 0.3s ease;
+}
+
+.containere:hover{
+  box-shadow: 0  0 7px blue;
 }
 
 .containere p {
   font-size: 30px;
   padding: 20px;
   background-color: #050505d8;
-  align-items: center;
-  text-align: justify;
+  text-align: center;
   line-height: 1.6;
   color: blue;
 }
 
-.projetostitlo{
+.containere p:hover{
+  box-shadow: 0  0 7px blue;
+}
+
+.projetostitlo {
   font-size: 50px;
   align-items: center;
   text-align: center;
   color: blue;
   text-transform: uppercase;
 }
+
+.containere h1 {
+  color: blue;
+  font-size: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px;
+  background-color: #050505d8;
+    }
