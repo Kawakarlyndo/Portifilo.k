@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Dias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        #btn-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #calculator {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btn-toggle">Abrir Calculadora</button>
+
+    <div id="calculator">
+        <h2>Calculadora de Dias</h2>
+        <label for="start-date">Data Inicial:</label>
+        <input type="date" id="start-date">
+        
+        <label for="end-date">Data Final:</label>
+        <input type="date" id="end-date">
+        
+        <button onclick="calculateDays()">Calcular</button>
+        
+        <p id="result"></p>
+    </div>
+
+    <script>
+        const calculator = document.getElementById('calculator');
+        const toggleButton = document.getElementById('btn-toggle');
+
+        toggleButton.addEventListener('click', function() {
+            if (calculator.style.display === 'none' || calculator.style.display === '') {
+                calculator.style.display = 'block';
+                toggleButton.innerText = 'Fechar Calculadora';
+            } else {
+                calculator.style.display = 'none';
+                toggleButton.innerText = 'Abrir Calculadora';
+            }
+        });
+
+        function calculateDays() {
+            const startDate = new Date(document.getElementById('start-date').value);
+            const endDate = new Date(document.getElementById('end-date').value);
+
+            if (!startDate || !endDate || isNaN(startDate) || isNaN(endDate)) {
+                document.getElementById('result').innerText = "Por favor, insira datas válidas.";
+                return;
+            }
+
+            const difference = endDate - startDate;
+            const days = difference / (1000 * 60 * 60 * 24);
+
+            if (days < 0) {
+                document.getElementById('result').innerText = "A data final deve ser posterior à data inicial.";
+            } else {
+                document.getElementById('result').innerText = `Diferença: ${days} dias`;
+            }
+        }
+    </script>
+
+</body>
+</html>
